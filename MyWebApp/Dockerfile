@@ -15,7 +15,7 @@ COPY src/main/webapp/index.jsp /www/data/
 
 # Append "daemon off;" to the beginning of the configuration
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
-
+    
 # Copy the runner script and make it executable
 COPY runner.sh /runner.sh
 RUN chmod +x /runner.sh

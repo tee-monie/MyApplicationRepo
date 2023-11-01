@@ -1,13 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.jcp.shipping</groupId>
   <artifactId>MyWebApp</artifactId>
-  <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
   <name>MyWebApp</name>
   <url>http://maven.apache.org</url>
 
+<<<<<<< HEAD
   <dependencies>
     <!-- Add Java EE dependencies for a simple web app -->
     <dependency>
@@ -15,16 +16,42 @@
       <artifactId>javax.servlet-api</artifactId>
       <version>3.1.0</version>
       <scope>provided</scope>
+=======
+  <!-- Define the packaging type for a web application -->
+  <packaging>war</packaging>
+
+  <dependencies>
+    <!-- Example dependency: JUnit for testing -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version> <!-- Updated to a more recent version -->
+      <scope>test</scope>
+>>>>>>> 5c1cf4ca2847bdb14e4c814f25f46b8227622bfb
     </dependency>
+    <!-- Add more dependencies as needed -->
   </dependencies>
 
   <build>
     <finalName>MyWebApp</finalName>
+<<<<<<< HEAD
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
         <version>3.3.1</version>
+=======
+    <!-- Configure the Maven Compiler Plugin to set Java version -->
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+>>>>>>> 5c1cf4ca2847bdb14e4c814f25f46b8227622bfb
       </plugin>
     </plugins>
   </build>

@@ -1,20 +1,10 @@
-FROM maven:3.8.4 AS build
+FROM jenkins/jenkins:latest
 
-WORKDIR /MyWebApp
-COPY MyWebApp/pom.xml .
-COPY MyWebApp/src ./src
+USER root
 
-RUN mvn clean package
+# Install Maven
+RUN apt-get update && \
+    apt-get install -y maven && \
+    apt-get clean
 
-FROM tomcat:latest
-
-RUN rm -rf /usr/local/tomcat/webapps/*
-
-# Copy the built WAR file from the previous stage
-COPY --from=build /MyWebApp/target/MyWebApp.war /usr/local/tomcat/webapps/ROOT.war
-
-# Expose the port your web app will run on
-EXPOSE 8080
-
-# Start Tomcat
-CMD ["catalina.sh", "run"]
+USER jenkins
